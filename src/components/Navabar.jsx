@@ -1,9 +1,9 @@
 import React from 'react'
 import {AiOutlineMenu} from 'react-icons/ai'
-const navbar = () =>{
+const navabar = () =>{
     return (
         <AiOutlineMenu/>
     )
 }
 
-export default navbar
+export default navabar
