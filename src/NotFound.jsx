@@ -1,5 +1,3 @@
-import "./NotFound.css"
-
 const NotFound = () => {
     return <div className="w-screen h-screen overflow-hidden">
             <iframe 
