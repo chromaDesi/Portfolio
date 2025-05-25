@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import Navabar from './components/Navabar'
 import {BrowserRouter,Routes, Route } from 'react-router-dom'
 import NotFound from './NotFound'
 import Home from './Home'
+import Resume from './components/Resume';
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element = {<Home/>}/>
+        <Route path="/resume" element={<Resume/>} />
         <Route path = "*" element={<NotFound/>}/>
       </Routes>
       </BrowserRouter>
