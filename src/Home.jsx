@@ -1,13 +1,18 @@
-import navabar from "./components/Navabar";
+import Navabar from "./components/Navabar";
 
 const Home = () =>{
     return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+       {/*theme toggle*/} 
+        
         {/*navabar*/}
-        <navabar/>
+        <Navabar/>
 
         {/*content*/}
 
         {/*footing*/}
+        <main>
+            {/*Add  all the other pages here*/}
+        </main>
 
     </div>
 }

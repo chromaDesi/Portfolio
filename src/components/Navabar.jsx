@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {cn} from "../libs/utils"
 
+
+
+//this is a list to declare the the options that will be displayed in the navbar
 const items = [
     {name: "Home", href: "#Hero"},
     {name: "About", href: "#About"},
@@ -9,8 +12,11 @@ const items = [
     {name: "Research", href: "#Research"},
     {name: "Contact", href: "#Contact"}
 ]
-const navabar = () =>{
+
+
+const Navabar = () =>{
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,14 +31,39 @@ const navabar = () =>{
     )}>
 
         <div className="container flex items-center justify-between">
-            <a className="color-red">
-                <span className="text-2xl font-bold text-primary">
-                    {" "}
-                    <span>Varun Parekh</span> Portfolio
+            <a className="text-bold text-xl items-center flex font-bold text-primary" href="#Hero">
+                <span className="relative z-10">
+                    <span>Varun Parekh</span>{" "} Portfolio
                 </span>
             </a>
+            
+            {/*Desktop Version*/}
+                <div className="hideen md:flex space-x-8">
+                    {items.map((item, key) => (
+                        <a key = {key}>
+                            {item.name}
+                        </a>
+
+                    ))}
+                </div>
+
+            {/*Mobile Version*/}
+                <div className={cn("fixed inset-0 bg-background-blur-md z-40 flex flex-col items-center justify-center",
+                    "transition-all duration-300 md:hidden",
+                    isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                )}
+                >
+                    <div className="hideen md:flex space-x-8">
+                    {items.map((item, key) => (
+                        <a key = {key}>
+                            {item.name}
+                        </a>
+
+                    ))}
+                    </div>
+                </div>
             </div>   
     </nav>
 }
 
-export default navabar
+export default Navabar;

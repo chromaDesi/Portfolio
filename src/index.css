@@ -1,3 +1,124 @@
 @import "tailwindcss";
 
 
+/*define a color that is a class name
+hsl is a color, var defines variable
+--classname : hsl(var(--varname));*/
+@theme {
+    --color-border: hsl(var(--border));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-card: hsl(var(--card));
+    
+
+    /*Here we are defining some animations to be used in the website*/
+    --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite; /*keep stars pulsating*/
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-fade-in: fade-in 0.7s ease-out forwards;
+    --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+    --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+    --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+    --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+    --animate-metoer: meteor 5s linear infinite;
+    /*this does not actually define the animations as we need to write the keyframes
+    keyframes define how the animation should actually act*/
+
+    @keyframes fade-in {
+        from{
+            opacity: 0;
+            transform: translateY(20px);
+            }
+        to{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+/*To define the colors we mentioned earlier, we will use
+a @layer to initialize the variables, and then use the @theme to use them
+the :root is the base which represents the light theme whereas .dark is the added dark theme*/
+
+@layer base{
+    :root {
+        --background: 0 0% 0%
+        --foreground: 0 0% 0%
+
+        --border: 0 0% 0%
+
+        --primary: 0 0% 0%
+        --primary-foreground: 0 0% 0%
+
+        --card: 0 0% 0%
+    }
+
+    .dark {
+        --background: 0 0% 0%
+        --foreground: 0 0% 0%
+
+        --border: 0 0% 0%
+        
+        --primary: 0 0% 0%
+        --primary-foreground: 0 0% 0%
+
+        --card: 0 0% 0%
+    }
+}
+    
+/*To create a class name that you want styling applied on it when called
+In tailwind, to make it act in conjuction with the class name, you need to add a utility class*/
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+
+    {/*To accomodate for various creen sizes:*/}
+
+    @media (width >= 640px){
+        max-width: 640px;
+    }
+    @media (width >= 768px){
+        max-width: 768px;
+    }
+    @media (width >= 1024px){
+        max-width: 1024px;
+    }
+    @media (width >= 1200px){
+        max-width: 1200px;
+    }
+    @media (width >= 1400px){
+        max-width: 1440px;
+    }
+}
+
+
+/*If you want to apply css styles and not tailwind, do it using like line 104, else apply the class name
+You can also use the utility class to apply the styles to the class name that are predefined in tailwind using @apply*/
+@utility text-glow{
+    @apply relative;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+@utility card-hover {
+    @apply transition duration-300 hover:scale-[1.04] hover:shadow-lg;
+}
+
+@utility gradient-border {
+    @apply relative rounded-md;
+    background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)))
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+
+@utility cosmic-button {
+    @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+    transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+    hover:scale-105 active:scale-95
+}
+
+
+

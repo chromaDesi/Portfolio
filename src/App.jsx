@@ -4,6 +4,7 @@ import {BrowserRouter,Routes, Route } from 'react-router-dom'
 import NotFound from './components/NotFound'
 import Home from './Home'
 import Resume from './components/Resume';
+import Toaster from 'src/components/ui/toaster'
 
 
 
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+    <Toaster/>
     <BrowserRouter>
       <Routes>
         <Route index element = {<Home/>}/>
@@ -22,6 +24,7 @@ function App() {
     </>
   )
   //browser router allows us to add multiple pages, which will be routed to depending on the circumstance
+  // like in a url where we can add a path to the url to navigate to a different page
 }
 
 export default App
