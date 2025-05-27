@@ -1,4 +1,5 @@
 import Navabar from "./components/Navabar";
+import Contact from "./components/Contact";
 
 const Home = () =>{
     return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -8,11 +9,10 @@ const Home = () =>{
         <Navabar/>
 
         {/*content*/}
-
-        {/*footing*/}
         <main>
-            {/*Add  all the other pages here*/}
+            <Contact/>
         </main>
+        {/*footing*/}
 
     </div>
 }

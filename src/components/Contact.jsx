@@ -1,25 +1,51 @@
 import {
-    Instagram, Linkedin, Mail, Phone, MapPin, Github
-} from lucid-react;
+    Instagram, Linkedin, Mail, Phone, MapPin, Github, Send
+} from "lucide-react";
 import {cn} from "../libs/utils";
 import {useToast} from "../hooks/use-toast";
 import { useState } from "react";
+import emailjs from 'emailjs-com';
 
 //Watch his other video to link email api
 
 const Contact = () => {
     const {toast} = useToast()
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+        });
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        setTimeout(() => {
+        emailjs.sendForm(serviceId, templateId, e.target, publicKey)
+        .then((result) => {
+            setTimeout(() => {
             toast({
                 title: 'Message sent',
                 description: 'Thanks for the message, TTYS!',
             });
+            setFormData({name: "", email: "", message: ""});
             setIsSubmitting(false);
-        }, 1500)
+            console.log(serviceId)
+            console.log(templateId)
+            console.log(publicKey)
+
+        }, 600);
+        }).catch(() => {
+            setTimeout(() => {
+                toast({
+                    title: 'Error',
+                    description: 'Something went wrong, try again',
+                })
+            }, 600);
+        })
     };
     
     return (
@@ -76,13 +102,13 @@ const Contact = () => {
                             <div className="pt-8">
                                 <h4 className="font-medium mb-4">Connect with Me</h4>
                                 <div className="flex space-x-4 justify-center">
-                                    <a href="add linkedin link" target="_blank">
+                                    <a href="https://www.linkedin.com/in/vparekhinfo" target="_blank" rel="noopener noreferrer">
                                         <Linkedin />
                                     </a>
-                                    <a href="add instagram link" target="_blank">
+                                    <a href="https://www.instagram.com/vparekh18?igsh=MWc2MWlnbmo0M3ZrbA==" target="_blank" rel="noopener noreferrer">
                                         <Instagram />
                                     </a>
-                                    <a href="add github link" target="_blank">
+                                    <a href="https://github.com/chromaDesi" target="_blank" rel="noopener noreferrer">
                                         <Github />
                                     </a>
                                 </div>
@@ -92,10 +118,10 @@ const Contact = () => {
                     </div>
 
 
-                    <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
-                        <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+                    <div className="bg-card p-8 rounded-lg shadow-xs">
+                        <h3 className="text-2xl font-semibold mb-6 text-primary-foreground"> Send a Message</h3>
 
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2"> Your Name</label>
                                 <input
@@ -103,7 +129,9 @@ const Contact = () => {
                                 id="name"
                                 name="name"
                                 required
-                                className = "w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                                value = {formData.name}
+                                onChange={(e)=> setFormData({...formData, name: e.target.value})}
+                                className = "w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                                 placeholder="Varun Parekh..."/>
                             </div>
 
@@ -114,7 +142,9 @@ const Contact = () => {
                                 id="email"
                                 name="email"
                                 required
-                                className = "w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                                value = {formData.email}
+                                onChange={(e)=> setFormData({...formData, email: e.target.value})}
+                                className = "w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                                 placeholder="youremail@gmail.com"/>
                             </div>
 
@@ -124,7 +154,9 @@ const Contact = () => {
                                 id="message"
                                 name="message"
                                 required
-                                className = "w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                                value = {formData.message}
+                                onChange={(e)=> setFormData({...formData, message: e.target.value})}
+                                className = "w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                                 placeholder="Hi, I wanted to reach out to discuss..."/>
                             </div>
 

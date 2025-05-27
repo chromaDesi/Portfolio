@@ -4,7 +4,7 @@ import {BrowserRouter,Routes, Route } from 'react-router-dom'
 import NotFound from './components/NotFound'
 import Home from './Home'
 import Resume from './components/Resume';
-import Toaster from 'src/components/ui/toaster'
+import {Toaster} from './components/ui/toaster'
 
 
 

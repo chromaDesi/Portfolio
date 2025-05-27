@@ -38,14 +38,14 @@ const Navabar = () =>{
             </a>
             
             {/*Desktop Version*/}
-                <div className="hideen md:flex space-x-8">
-                    {items.map((item, key) => (
-                        <a key = {key}>
-                            {item.name}
-                        </a>
+            <div className="hidden md:flex space-x-8">
+                {items.map((item, key) => (
+                    <a key = {key}>
+                        {item.name}
+                    </a>
 
-                    ))}
-                </div>
+                ))}
+            </div>
 
             {/*Mobile Version*/}
                 <div className={cn("fixed inset-0 bg-background-blur-md z-40 flex flex-col items-center justify-center",
@@ -54,15 +54,15 @@ const Navabar = () =>{
                 )}
                 >
                     <div className="hideen md:flex space-x-8">
-                    {items.map((item, key) => (
-                        <a key = {key}>
-                            {item.name}
-                        </a>
+                        {items.map((item, key) => (
+                            <a key = {key}>
+                                {item.name}
+                            </a>
 
-                    ))}
+                        ))}
                     </div>
                 </div>
-            </div>   
+        </div>   
     </nav>
 }
 
