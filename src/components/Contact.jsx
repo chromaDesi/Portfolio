@@ -48,6 +48,23 @@ const Contact = () => {
         })
     };
     
+    /* Figure out later how to add
+    <section id="contact" className="relative w-full h-full overflow-hidden py-24 px-4">
+            <iframe 
+                src="https://my.spline.design/claritystream-VA3ge7zOxLqqtzT5xO8XnQLY/" 
+                frameBorder="0" 
+                allowFullScreen 
+                className="absolute inset-0 w-full h-full z-0 pointer-events-none"
+            ></iframe>
+
+            <div className = "container mx-auto max-w-5xl relative z-10"></div>
+    
+    */
+
+
+
+
+
     return (
         <section id="contact" className="py-24 px-4 relative bg-secondary/30">
             <div className = "container mx-auto max-w-5xl">

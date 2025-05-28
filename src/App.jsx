@@ -1,30 +1,36 @@
-import { useState } from 'react'
-import './App.css'
-import {BrowserRouter,Routes, Route } from 'react-router-dom'
-import NotFound from './components/NotFound'
-import Home from './Home'
+import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Preloader from './components/Preloader';
+import Home from './components/Home';
 import Resume from './components/Resume';
-import {Toaster} from './components/ui/toaster'
-
-
+import NotFound from './components/NotFound';
+import { Toaster } from './components/ui/toaster';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 4000); // show for 4s
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-    <Toaster/>
-    <BrowserRouter>
-      <Routes>
-        <Route index element = {<Home/>}/>
-        <Route path="/resume" element={<Resume/>} />
-        <Route path = "*" element={<NotFound/>}/>
-      </Routes>
-      </BrowserRouter>
+      <Toaster />
+
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      )}
     </>
-  )
-  //browser router allows us to add multiple pages, which will be routed to depending on the circumstance
-  // like in a url where we can add a path to the url to navigate to a different page
+  );
 }
 
-export default App
+export default App;
