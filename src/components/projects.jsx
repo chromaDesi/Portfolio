@@ -6,17 +6,14 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
 
   const work = [
-    { title: "Project 1", description: "This is project 1", imgUrl: "/prop_model_r.jpg"},
-    { title: "Project 1", description: "This is project 1", imgUrl: "/prop_model_r.jpg"},
-    { title: "Project 1", description: "This is project 1", imgUrl: "/prop_model_r.jpg"},
-    { title: "Project 1", description: "This is project 1", imgUrl: "/prop_model_r.jpg"},
-    { title: "Project 1", description: "This is project 1", imgUrl: "/prop_model_r.jpg"},
-    { title: "Project 1", description: "This is project 1", imgUrl: "/prop_model_r.jpg"},
+    { title: "Project 1", description: "This is project 1", skills: [], imgUrl: "/prop_model_r.jpg"},
+    { title: "Project 1", description: "This is project 1", skills: [], imgUrl: "/prop_model_r.jpg"},
+    { title: "Project 1", description: "This is project 1", skills: [], imgUrl: "/prop_model_r.jpg"},
   ];
 
   const research = [
-    { title: "Cost-Sensitive Learning: Propensity Modeling Optimization", description: "#Python #Scikit-Learn #ML", imgUrl: "/prop_model_r.jpg", url: "https://www.linkedin.com/in/vparekhinfo/details/projects/343267436/multiple-media-viewer/?profileId=ACoAADLKqvEBxeGRTptNKOI22SgKFr17oUha0Fc&treasuryMediaId=1735510055966" },
-    { title: "Marijuana and the Effects on the Young Adult", description: "#Healthcare", imgUrl: "/weed.jpg", url: "https://www.linkedin.com/in/vparekhinfo/details/projects/351239392/multiple-media-viewer/?profileId=ACoAADLKqvEBxeGRTptNKOI22SgKFr17oUha0Fc&treasuryMediaId=1748402929164" },
+    { title: "Cost-Sensitive Learning: Propensity Modeling Optimization", description: "#Python #Scikit-Learn #ML", skills: [], imgUrl: "/prop_model_r.jpg", url: "https://www.linkedin.com/in/vparekhinfo/details/projects/343267436/multiple-media-viewer/?profileId=ACoAADLKqvEBxeGRTptNKOI22SgKFr17oUha0Fc&treasuryMediaId=1735510055966" },
+    { title: "Marijuana and the Effects on the Young Adult", description: "#Healthcare", skills: [], imgUrl: "/weed.jpg", url: "https://www.linkedin.com/in/vparekhinfo/details/projects/351239392/multiple-media-viewer/?profileId=ACoAADLKqvEBxeGRTptNKOI22SgKFr17oUha0Fc&treasuryMediaId=1748402929164" },
   ];
 
   const data = activeTab === "projects" ? work : research;
