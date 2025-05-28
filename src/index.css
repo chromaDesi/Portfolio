@@ -4,12 +4,15 @@
 /*define a color that is a class name
 hsl is a color, var defines variable
 --classname : hsl(var(--varname));*/
-body{
+html, body{
     cursor: pointer;
-}
-html {
+    background-color: #0e0e0e; /* or your actual background */
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
+
 
 
 @theme {

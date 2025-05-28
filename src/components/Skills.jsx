@@ -1,23 +1,12 @@
-import { 
-    FaPython,
-    FaReact,
-    FaNodeJs,
-    FaGitAlt,
-    FaLinux,
-    FaJava,
-    FaAws
- } from "react-icons/fa";
 
+import { motion } from "framer-motion";
+import { FaPython, FaReact, FaNodeJs, FaGitAlt, FaLinux, FaJava, FaAws } from "react-icons/fa";
 import {
-  SiJavascript, SiC, SiHtml5, SiMysql,
-  SiMongodb, SiNumpy, SiPandas, SiScikitlearn,
-  SiJupyter, SiOracle, SiCanva, SiAdobephotoshop, SiSqlalchemy, SiTailwindcss
+  SiJavascript, SiC, SiHtml5, SiMysql, SiMongodb, SiNumpy,
+  SiPandas, SiScikitlearn, SiJupyter, SiOracle, SiCanva,
+  SiAdobephotoshop, SiSqlalchemy, SiTailwindcss
 } from "react-icons/si";
-
-
-//Keep adding more icons as needed
-//https://react-icons.github.io/react-icons/icons/si/
-
+import Spline from '@splinetool/react-spline';
 const powers = [
   { name: "Python", icon: FaPython },
   { name: "React", icon: FaReact },
@@ -42,41 +31,60 @@ const powers = [
   { name: "Photoshop", icon: SiAdobephotoshop }
 ];
 
+const icons = (duration) => ({
+  initial: { y: -10 },
+  animate: {
+    y: [10, -10],
+    transition: {
+      duration: duration,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "reverse"
+    }
+  }
+});
 
 const Skills = () => {
-    return (
+  return (
+    <section id="Skills" className="py-24 px-4 relative overflow-hidden bg-black">
+      
+      {/* Spline Background with Fade In/Out */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        transition={{ duration: 1 }}
+      >
+        <Spline scene="/blue_planet.spline"/>
+      </motion.div>
 
-        <section id = "Skills" className = "py-24 px-4 relative bg-secondary/30">
-            <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                    My<span className="text-primary"> Skills</span>
-                </h2>
+      <div className="container mx-auto max-w-5xl relative z-10">
+        <motion.h2
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary-foreground"
+        >
+          My<span className="text-primary"> Skills</span>
+        </motion.h2>
 
-
-                {/* This section will be used to display the skills 
-                it takes the map above to generate the list of skills*/}
-                <div className="flex flex-wrap justify-center gap-6">
-                    {powers.map(({ name, icon: Icon }) => (
-                        <div key={name} className="bg-card p-4 rounded-2xl border-4 shadow-xs card-hover flex flex-col items-center">
-                        <Icon className="text-6xl text-primary-foreground" />
-                        <span className=" font-bold text-glow mt-2 text-sm text-primary-foreground">{name}</span>
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-        </section>
-    );
+        <div className="flex flex-wrap justify-center gap-6">
+          {powers.map(({ name, icon: Icon }) => (
+            <motion.div
+              key={name}
+              initial="initial"
+              animate="animate"
+              variants={icons(2 + Math.random())}
+              className="bg-primary p-4 rounded-2xl border-4 shadow-xs card-hover flex flex-col items-center"
+            >
+              <Icon className="text-6xl text-primary-foreground" />
+              <span className="font-bold text-glow mt-2 text-sm text-primary-foreground">{name}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
-
 export default Skills;
-
-/* 
-
-<div className=" flex-wrap flex grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-card p-4 rounded-2xl border-4 shadow-xs card-hover">
-                        <FaPython className="text-7xl text-primary-foreground"/>
-                    </div>
-
-                </div>*/

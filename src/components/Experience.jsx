@@ -1,4 +1,6 @@
 //edit experiences later
+import Spline from '@splinetool/react-spline';
+import { motion } from 'framer-motion';
 const experiences = [
     {
       id: 0,
@@ -43,22 +45,48 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id = "Experience" className = "py-24 px-4 relative bg-secondary/30">
-        <div className="container mx-auto max-w-5xl text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Professional<span className="text-primary"> Experience</span>
-            </h2>
-  
-            <p className="text-foreground mt-4 text-lg font-semibold">
-            A collection of my work experience and the roles I have taken in
-            various organizations
-            </p>
-        </div>
+    <section id = "Experience" className = "py-24 px-4 relative bg-foreground">
+
+      {/* Spline Background with Fade In/Out */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        transition={{ duration: 1 }}
+      >
+        <Spline scene="/solar.spline"/>
+      </motion.div>
+    
+
+
+        
+
 
       {/* Experience Timeline */}
       <div className="relative">
+
+
+        <div className="container mx-auto max-w-5xl text-center mb-16">
+            <motion.h2
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary-foreground"
+            >
+                Professional<span className="text-primary"> Experience</span>
+            </motion.h2>
+  
+            <motion.p 
+            whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="text-background mt-4 text-lg font-semibold">
+            A collection of my work experience and the roles I have taken in
+            various organizations
+            </motion.p>
+        </div>
         {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-foreground h-full hidden xl:block"></div>
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-primary h-[90%] hidden xl:block"></div>
 
         {/* Experience Entries */}
         {experiences.map((experience, index) => (

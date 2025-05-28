@@ -19,7 +19,7 @@ const Preloader = ({ onFinish }) => {
   return (
     <div
       className={`fixed inset-0 z-[9999] bg-black transition-opacity duration-700 ease-in-out ${
-        fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        fadeOut ? 'opacity-2 pointer-events-none' : 'opacity-100'
       }`}
     >
       <Spline scene="/drip_loader.spline" />

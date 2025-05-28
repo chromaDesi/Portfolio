@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-
+import {motion} from 'framer-motion';
+import Spline from '@splinetool/react-spline';
 //update projects
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -20,13 +21,31 @@ const Projects = () => {
 
   return (
     <section id="Projects" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">
+      
+
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        transition={{ duration: 1 }}
+      >
+        <Spline scene="/space.spline"/>
+      </motion.div>
+      <div className="container mx-auto max-w-5xl text-center z-10 relative">
+        <motion.h2 
+        whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="text-3xl md:text-4xl font-bold mb-2 text-primary-foreground">
           Personal <span className="text-primary">Work</span>
-        </h2>
-        <p className="text-foreground mt-4 text-lg font-semibold mb-10">
+        </motion.h2>
+        <motion.p
+        whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }} 
+        className="text-primary-foreground mt-4 text-lg font-semibold mb-10">
             Come take a look at some of my projects and research samples!
-            </p>
+            </motion.p>
         <div className="flex justify-center mb-8 gap-4">
           <button
             className={`cosmic-button ${activeTab === "projects" ? "bg-primary text-white" : "bg-card text-primary"}`}
