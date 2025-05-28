@@ -6,7 +6,7 @@ import {
   SiPandas, SiScikitlearn, SiJupyter, SiOracle, SiCanva,
   SiAdobephotoshop, SiSqlalchemy, SiTailwindcss
 } from "react-icons/si";
-import Spline from '@splinetool/react-spline';
+
 const powers = [
   { name: "Python", icon: FaPython },
   { name: "React", icon: FaReact },
@@ -48,15 +48,6 @@ const Skills = () => {
   return (
     <section id="Skills" className="py-24 px-4 relative overflow-hidden bg-black">
       
-      {/* Spline Background with Fade In/Out */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ duration: 1 }}
-      >
-        <Spline scene="/blue_planet.spline"/>
-      </motion.div>
 
       <div className="container mx-auto max-w-5xl relative z-10">
         <motion.h2

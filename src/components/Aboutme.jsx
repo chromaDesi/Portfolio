@@ -1,7 +1,7 @@
 import { BriefcaseBusiness, User, Code } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import Spline from '@splinetool/react-spline';
+
 
 const cardData = [
   {
@@ -27,15 +27,7 @@ const Aboutme = () => {
 
   return (
     <section id="Aboutme" className="py-24 px-4 relative overflow-hidden bg-black">
-      {/* Spline Background with Fade In/Out */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ duration: 1 }}
-      >
-        <Spline scene="/black_hole.spline"/>
-      </motion.div>
+      
 
     <div className="relative z-10 container mx-auto max-w-5xl" ref={ref}>
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary-foreground">

@@ -1,5 +1,4 @@
-//edit experiences later
-import Spline from '@splinetool/react-spline';
+
 import { motion } from 'framer-motion';
 const experiences = [
     {
@@ -46,21 +45,6 @@ const experiences = [
 const Experience = () => {
   return (
     <section id = "Experience" className = "py-24 px-4 relative bg-foreground">
-
-      {/* Spline Background with Fade In/Out */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ duration: 1 }}
-      >
-        <Spline scene="/solar.spline"/>
-      </motion.div>
-    
-
-
-        
-
 
       {/* Experience Timeline */}
       <div className="relative">

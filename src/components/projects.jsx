@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import {motion} from 'framer-motion';
-import Spline from '@splinetool/react-spline';
+
 //update projects
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -22,17 +22,7 @@ const Projects = () => {
   const data = activeTab === "projects" ? work : research;
 
   return (
-    <section id="Projects" className="py-24 px-4 relative bg-secondary/30">
-      
-
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ duration: 1 }}
-      >
-        <Spline scene="/space.spline"/>
-      </motion.div>
+    <section id="Projects" className="py-24 px-4 relative bg-foreground">
       <div className="container mx-auto max-w-5xl text-center z-10 relative">
         <motion.h2 
         whileInView={{ opacity: 1, y: 0 }}
