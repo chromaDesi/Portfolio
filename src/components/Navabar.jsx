@@ -51,7 +51,7 @@ const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              className="text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold"
             >
               {item.name}
             </a>
@@ -69,6 +69,9 @@ const Navbar = () => {
           </button>
         )}
       </div>
+
+
+      
 
       {/* Mobile menu overlay */}
       <div
@@ -98,7 +101,7 @@ const Navbar = () => {
               key={key}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              className="text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold"
             >
               {item.name}
             </a>
