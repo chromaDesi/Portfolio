@@ -41,7 +41,8 @@ hsl is a color, var defines variable
 
 /*To define the colors we mentioned earlier, we will use
 a @layer to initialize the variables, and then use the @theme to use them
-the :root is the base which represents the light theme whereas .dark is the added dark theme*/
+the :root is the base which represents the light theme whereas .dark is the added dark theme
+In our case, we wont have a theme toggle*/
 
 @layer base{
     :root {
@@ -52,18 +53,6 @@ the :root is the base which represents the light theme whereas .dark is the adde
 
         --primary: 0 100% 50%;
         --primary-foreground: 0 0% 100%;
-
-        --card: 0 0% 0%;
-    }
-
-    .dark {
-        --background: 0 0% 0%;
-        --foreground: 0 0% 0%;
-
-        --border: 0 0% 0%;
-        
-        --primary: 0 0% 0%;
-        --primary-foreground: 0 0% 0%;
 
         --card: 0 0% 0%;
     }

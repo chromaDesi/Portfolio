@@ -1,6 +1,7 @@
 import Navabar from "./Navabar";
 import Contact from "./Contact";
 import Skills from "./Skills";
+import Projects from "./projects";
 
 const Home = () =>{
     return <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -11,6 +12,7 @@ const Home = () =>{
 
         {/*content*/}
         <main>
+            <Projects/>
             <Skills/>
             <Contact/>
         </main>

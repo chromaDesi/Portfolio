@@ -31,9 +31,10 @@ const Navabar = () =>{
     )}>
 
         <div className="container flex items-center justify-between">
-            <a className="text-bold text-xl items-center flex font-bold text-primary" href="#Hero">
+            <a className="text-bold text-xl items-center flex font-bold" href="#Hero">
                 <span className="relative z-10">
-                    <span>Varun Parekh</span>{" "} Portfolio
+                    Varun Parekh's 
+                    <span span className="text-primary text-glow"> Portfolio</span>
                 </span>
             </a>
             
