@@ -11,7 +11,7 @@ const items = [
   { name: "Experience", href: "#Experience" },
   { name: "Projects", href: "#Projects" },
   { name: "Contact", href: "#Contact" },
-  { name: "Resume", href: "resume" }
+  { name: "Resume", href: "https://drive.google.com/file/d/1PdNH1d3pNZY1L8vn5QnkY89NH9RNv--i/view?usp=sharing" }
 ];
 
 const Navbar = () => {
