@@ -7,6 +7,9 @@ hsl is a color, var defines variable
 body{
     cursor: pointer;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 
 @theme {

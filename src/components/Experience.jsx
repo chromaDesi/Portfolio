@@ -1,6 +1,4 @@
-
-
-
+//edit experiences later
 const experiences = [
     {
       id: 0,
@@ -45,7 +43,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id = "experience" className = "py-24 px-4 relative bg-secondary/30">
+    <section id = "Experience" className = "py-24 px-4 relative bg-secondary/30">
         <div className="container mx-auto max-w-5xl text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 Professional<span className="text-primary"> Experience</span>
@@ -60,7 +58,7 @@ const Experience = () => {
       {/* Experience Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-foreground h-full"></div>
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-foreground h-full hidden xl:block"></div>
 
         {/* Experience Entries */}
         {experiences.map((experience, index) => (
@@ -71,7 +69,7 @@ const Experience = () => {
             }`}
           >
             {/* Timeline Circle */}
-            <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-primary w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
+            <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-primary w-12 h-12 sm:w-16 sm:h-16 rounded-full justify-center items-center z-10 hidden xl:block">
               <img
                 src={experience.img}
                 alt={experience.company}

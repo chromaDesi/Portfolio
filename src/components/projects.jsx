@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 //update projects
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
-
+  //add projects
   const work = [
     { title: "Project 1", description: "This is project 1", skills: [], imgUrl: "/prop_model_r.jpg"},
     { title: "Project 1", description: "This is project 1", skills: [], imgUrl: "/prop_model_r.jpg"},
@@ -19,7 +19,7 @@ const Projects = () => {
   const data = activeTab === "projects" ? work : research;
 
   return (
-    <section id="projects" className="py-24 px-4 relative bg-secondary/30">
+    <section id="Projects" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
           Personal <span className="text-primary">Work</span>
