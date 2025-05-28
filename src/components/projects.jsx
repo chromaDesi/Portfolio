@@ -40,13 +40,13 @@ const Projects = () => {
             </motion.p>
         <div className="flex justify-center mb-8 gap-4">
           <button
-            className={`cosmic-button ${activeTab === "projects" ? "bg-primary text-white" : "bg-card text-primary"}`}
+            className={`cosmic-button ${activeTab === "projects" ? "bg-primary text-white" : "bg-white text-primary"}`}
             onClick={() => setActiveTab("projects")}
           >
             Projects
           </button>
           <button
-            className={`cosmic-button ${activeTab === "research" ? "bg-primary text-white" : "bg-card text-primary"}`}
+            className={`cosmic-button ${activeTab === "research" ? "bg-primary text-white" : "bg-white text-primary"}`}
             onClick={() => setActiveTab("research")}
           >
             Research
