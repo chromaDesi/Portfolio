@@ -36,19 +36,19 @@ const Aboutme = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Text Column */}
-          <div className="space-y-6 card-hover rounded-2xl gradient-border">
+          <div className="space-y-6 card-hover rounded-lg p-6 bg-white">
             <h3 className="font-bold text-2xl text-primary">
               Passionate Software Developer and AI/ML Enthusiast
             </h3>
 
-            <p className="text-background font-semibold">
+            <p className="text-foreground font-semibold">
               I’m a passionate and detail-oriented Computer Science student at George Mason University with a strong
               focus on full-stack development, data analytics, and AI/ML. My technical experience spans building scalable
               web applications with the MERN stack to designing custom machine learning pipelines for stock market
               analysis. I’m especially enthusiastic about the fields of quantitative analysis and algorithmic intelligence.
             </p>
 
-            <p className="text-background font-semibold">
+            <p className="text-foreground font-semibold">
               Beyond technical work, I’ve held leadership roles in student organizations such as the Indian Student
               Association and Hindu Student Association, where I led project planning, team coordination, and large-scale
               event execution—strengthening my project management and team collaboration skills.
