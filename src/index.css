@@ -4,7 +4,13 @@
 /*define a color that is a class name
 hsl is a color, var defines variable
 --classname : hsl(var(--varname));*/
+body{
+    cursor: pointer;
+}
+
+
 @theme {
+
     --color-border: hsl(var(--border));
     --color-background: hsl(var(--background));
     --color-foreground: hsl(var(--foreground));

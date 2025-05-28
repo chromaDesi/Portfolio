@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 
-
+//update projects
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
 
@@ -27,8 +27,9 @@ const Projects = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
           Personal <span className="text-primary">Work</span>
         </h2>
-        <p className="mb-10 text-muted-foreground">Come take a look at some of my projects and research samples!</p>
-
+        <p className="text-foreground mt-4 text-lg font-semibold mb-10">
+            Come take a look at some of my projects and research samples!
+            </p>
         <div className="flex justify-center mb-8 gap-4">
           <button
             className={`cosmic-button ${activeTab === "projects" ? "bg-primary text-white" : "bg-card text-primary"}`}

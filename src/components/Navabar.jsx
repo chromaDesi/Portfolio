@@ -8,8 +8,8 @@ const items = [
     {name: "Home", href: "#Hero"},
     {name: "About", href: "#About"},
     {name: "Skills", href: "#Skills"},
+    {name: "Experience", href: "#Experience"},
     {name: "Projects", href: "#Projects"},
-    {name: "Research", href: "#Research"},
     {name: "Contact", href: "#Contact"}
 ]
 
