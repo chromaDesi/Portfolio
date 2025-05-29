@@ -24,7 +24,6 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/resume" element={<Resume />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
