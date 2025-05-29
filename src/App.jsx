@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Preloader from './components/Preloader';
 import Home from './components/Home';
-import Resume from './components/Resume';
 import NotFound from './components/NotFound';
 import { Toaster } from './components/ui/toaster';
 
