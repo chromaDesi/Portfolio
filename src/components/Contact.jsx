@@ -35,9 +35,6 @@ const Contact = () => {
             });
             setFormData({name: "", email: "", message: ""});
             setIsSubmitting(false);
-            console.log(serviceId)
-            console.log(templateId)
-            console.log(publicKey)
 
         }, 600);
         }).catch(() => {
