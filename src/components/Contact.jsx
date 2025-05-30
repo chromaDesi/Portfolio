@@ -112,7 +112,7 @@ const Contact = () => {
             </div>
             <div>
               <h4 className="text-primary-foreground">Location</h4>
-              <p className="text-primary-foreground">Alexandria, VA, United States</p>
+              <p className="text-primary-foreground hover:text-primary">Alexandria, VA, United States</p>
             </div>
           </div>
         </div>
