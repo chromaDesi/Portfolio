@@ -103,7 +103,7 @@ const Navbar = () => {
       {/* Mobile menu overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-md z-[999] flex flex-col items-center justify-center",
+          "fixed inset-0 bg-background/95 backdrop-blur-md z-999 flex flex-col items-center justify-center",
           "transition-all duration-300 md:hidden",
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
