@@ -19,13 +19,25 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 10);
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMenuOpen]);
+  window.addEventListener("scroll", handleScroll);
+
+  // Lock scroll when menu is open
+  if (isMenuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    document.body.style.overflow = "auto"; // Cleanup scroll lock
+  };
+}, [isMenuOpen]);
+
 
   return (
     <nav
