@@ -109,21 +109,21 @@ const Contact = () => {
             </div>
             <div>
               <h4 className="text-primary-foreground">Location</h4>
-              <p className="text-primary-foreground hover:text-primary">Alexandria, VA, United States</p>
+              <a href="https://maps.app.goo.gl/m8MuRrDfxEDEY7z1A" className="text-primary-foreground hover:text-primary">Alexandria, VA, United States</a>
             </div>
           </div>
         </div>
 
         <div className="pt-8 text-primary-foreground">
           <h4 className="font-medium mb-4">Connect with Me</h4>
-          <div className="flex space-x-4 justify-center font-large">
-            <a href="https://www.linkedin.com/in/vparekhinfo" target="_blank" rel="noopener noreferrer">
+          <div className="flex space-x-4 font-large">
+            <a href="https://www.linkedin.com/in/vparekhinfo" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <Linkedin />
             </a>
-            <a href="https://www.instagram.com/vparekh18" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/vparekh18" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <Instagram />
             </a>
-            <a href="https://github.com/chromaDesi" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/chromaDesi" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               <Github />
             </a>
           </div>
