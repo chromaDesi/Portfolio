@@ -7,6 +7,7 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
   //add projects
   const work = [
+    {title: "ISA GMU Official Website – Modern Club Platform ", description: "Designed and developed ISA GMU’s official website using React, TypeScript, and Framer Motion to boost student engagement and modernize the club’s digital presence.", skills: ['React.js', 'TailwindCSS', 'Vite', 'Framer Motion'], imgUrl:'isa.png', url:'https://isa-website-nine.vercel.app/'},
     { title: "FrequentFlier Rewards Android Application Tool ", description: "Created an Android app to allow easy access a custom database made in Oracle.", skills: ["Java", "OracleDB", "SQL", "Android", "JDBC API"], imgUrl: "/jdbc.jpg"},
     { title: "Animated Digital Greeting Card ", description: "Hosted on AWS S3, a cute greeting card", skills: ["AWS S3", "JavaScript", "HTML5", "CSS"], imgUrl: "/vday.jpg", url: "https://surprisenia.s3.us-east-1.amazonaws.com/index.html"},
     { title: "ZAKU Task Manager", description: "Implemented a custom task manager within Unix with chaining, dual processing, and file redirection", skills: ["C", "Unix"], imgUrl: "/zaku.jpg"},
