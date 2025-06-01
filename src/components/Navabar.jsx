@@ -13,7 +13,7 @@ const items = [
   { name: "Contact", href: "#Contact" },
   {
     name: "Resume",
-    href: "https://drive.google.com/file/d/1PdNH1d3pNZY1L8vn5QnkY89NH9RNv--i/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1tFyIp_bLXWzQ9eFGQWd7XMfkVNHERY4A/view?usp=sharing",
   },
 ];
 
