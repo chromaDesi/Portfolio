@@ -1,11 +1,12 @@
 
 import { motion } from "framer-motion";
-import { FaPython, FaReact, FaNodeJs, FaGitAlt, FaLinux, FaJava, FaAws } from "react-icons/fa";
+import { FaPython, FaReact, FaNodeJs, FaGitAlt, FaLinux, FaJava, FaAws,FaDocker } from "react-icons/fa";
 import {
   SiJavascript, SiC, SiHtml5, SiMysql, SiMongodb, SiNumpy,
   SiPandas, SiScikitlearn, SiJupyter, SiOracle, SiCanva,
   SiAdobephotoshop, SiSqlalchemy, SiTailwindcss
 } from "react-icons/si";
+import { PiBlueprint } from "react-icons/pi";
 
 const powers = [
   { name: "Python", icon: FaPython },
@@ -28,7 +29,9 @@ const powers = [
   { name: "Git", icon: FaGitAlt },
   { name: "Linux", icon: FaLinux },
   { name: "Canva", icon: SiCanva },
-  { name: "Photoshop", icon: SiAdobephotoshop }
+  { name: "Photoshop", icon: SiAdobephotoshop },
+  { name: "Agile Development", icon: PiBlueprint },
+  { name: "Docker", icon: FaDocker },
 ];
 
 const icons = (duration) => ({
