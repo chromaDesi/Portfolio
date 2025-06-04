@@ -1,12 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import './index.css'
+import { preloadAssets } from './libs/preload.js'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <SpeedInsights/>
+// Start preloading assets immediately
+preloadAssets();
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
+  </React.StrictMode>,
 )
