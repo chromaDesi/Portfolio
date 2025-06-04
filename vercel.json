@@ -1,5 +1,18 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "images": {
+    "sizes": [640, 750, 828, 1080, 1200],
+    "domains": ["localhost"],
+    "minimumCacheTTL": 60
+  },
+  "headers": [
+    {
+      "source": "/(.*).(js|css|jpg|jpeg|png|gif|ico|svg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

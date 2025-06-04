@@ -1,30 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Preloader from './components/Preloader';
-import Home from './components/Home';
-import NotFound from './components/NotFound';
 import { Toaster } from './components/ui/toaster';
+
+// Lazy load components
+const Home = lazy(() => import('./components/Home'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 4000); // show for 4s
-    return () => clearTimeout(timer);
+    // Check if the window has finished loading
+    if (document.readyState === 'complete') {
+      setIsLoading(false);
+    } else {
+      window.addEventListener('load', () => setIsLoading(false));
+      return () => window.removeEventListener('load', () => setIsLoading(false));
+    }
   }, []);
 
   return (
     <>
       <Toaster />
-
       {isLoading ? (
         <Preloader />
       ) : (
         <BrowserRouter>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<Preloader />}>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       )}
     </>
