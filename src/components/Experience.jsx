@@ -7,7 +7,7 @@ const experiences = [
       role: "AI/ML Research Fellow",
       company: "GBCS Group",
       date: "June 2025 - October 2025",
-      desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+      desc: "Prototyped generative AI solutions in PyTorch, translating research into deployable applications. Collaborated with mentors in weekly reviews to refine code, improve reproducibility, and ensure scalability.",   
       skills: [
         "Python",
         "OpenAI",
