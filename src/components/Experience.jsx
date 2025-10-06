@@ -3,6 +3,23 @@ import { motion } from 'framer-motion';
 const experiences = [
     {
       id: 0,
+      img: "/algo.png",
+      role: "AI/ML Research Fellow",
+      company: "GBCS Group",
+      date: "June 2025 - October 2025",
+      desc: "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+      skills: [
+        "Python",
+        "OpenAI",
+        "Scikit-Learn",
+        "NLTK",
+        "PyTorch",
+        "Prompt Engineering",
+        "Pandas",
+        "NumPy",
+      ],
+    },{
+      id: 1,
       img: "/gbcs.jpg",
       role: "Express Backend Software Developer Intern",
       company: "GBCS Group",
@@ -17,12 +34,12 @@ const experiences = [
         "Node JS",
         "Tailwind CSS",
         "MongoDb",
-        "Redux",
+        "Figma",
         " Next Js",
       ],
     },
     {
-      id: 1,
+      id: 2,
       img: "/opfin.jpg",
       role: "Data Analyst Intern",
       company: "Opfin AI",
