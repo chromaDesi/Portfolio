@@ -43,7 +43,7 @@ const experiences = [
       img: "/opfin.jpg",
       role: "Data Analyst Intern",
       company: "Opfin AI",
-      date: "December 2024 - April 2025",
+      date: "December 2024 - June 2025",
       desc: "Designed and maintained OracleDB schemas with 15+ normalized tables and 60+ PL/SQL queries to manage and preprocess 100,000+ time-series stock records; used oracledb and SQLAlchemy in Python to pipeline historical price and volume data into mining workflows.\n\nApplied data mining techniques on stock market datasets using Python (pandas, NumPy, Scikit-Learn), including clustering (K-Means, DBSCAN), technical pattern recognition, and dimensionality reduction (UMAP) to engineer a custom stock market indicator for trend prediction and portfolio insights.",
       skills: [
         "Python",
