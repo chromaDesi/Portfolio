@@ -8,9 +8,15 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("projects");
   //add projects
   const work = [
+    {title: "Spendi - Personal Finance Management Application", description: "Built a multi-screen Android prototype enabling users to log expenses, assign categories, and view monthly summaries, with Firestore syncing ensuring instant (<200ms) updates across app views during testing."+
+ "Implemented interactive MPAndroidChart dashboards and a budgeting module that provided clear category breakdowns, reducing navigation steps by ~25% and improving overall usability.", skills: ['Java', 'Android Studio', 'Firebase Firestore', 'MPAndroidChart', 'UI/UX Design'], imgUrl:'/spendi.png', url:"https://github.com/chromaDesi/Spendi-Finance-Tracker"},
+    {title: "GMU Marketplace Web Application – Team Project", description: "Contributing to a class-wide agile project to develop a full-stack campus marketplace web platform enabling secure item listings, search, and transactions among GMU students, alumni, and employees."+
+" Led the development of the Product Listings module, including designing MySQL schemas, writing Python-based backend logic for CRUD operations, and integrating with the front-end templates."+
+" Managed source control, issue tracking, and merge requests via GitLab, contributing to sprint-based feature delivery and peer code reviews.", skills: ['Python', 'Flask', 'MySQL', 'HTML5', 'CSS', 'GitLab', "Agile"], imgUrl:'gmu.jpg', url:'https://github.com/chromaDesi/GMU-Marketplace-ProductListingsSubsystem'
+},
     {title: "ISA GMU Official Website – Modern Club Platform ", description: "Designed and developed ISA GMU’s official website using React, TypeScript, and Framer Motion to boost student engagement and modernize the club’s digital presence.", skills: ['React.js', 'TailwindCSS', 'Vite', 'Framer Motion'], imgUrl:'isa.jpg', url:'https://isa-website-nine.vercel.app/'},
     { title: "FrequentFlier Rewards Android Application Tool ", description: "Created an Android app to allow easy access a custom database made in Oracle.", skills: ["Java", "OracleDB", "SQL", "Android", "JDBC API"], imgUrl: "/jdbc.jpg"},
-    { title: "Animated Digital Greeting Card ", description: "Hosted on AWS S3, a cute greeting card", skills: ["AWS S3", "JavaScript", "HTML5", "CSS"], imgUrl: "/vday.jpg", url: "https://surprisenia.s3.us-east-1.amazonaws.com/index.html"},
+    { title: "Animated Digital Greeting Card ", description: "Hosted on AWS S3, a cute greeting card", skills: ["AWS S3", "JavaScript", "HTML5", "CSS"], imgUrl: "/vday.jpg", url: "https://varunvday.s3.us-east-1.amazonaws.com/index.html"},
     { title: "ZAKU Task Manager", description: "Implemented a custom task manager within Unix with chaining, dual processing, and file redirection", skills: ["C", "Unix"], imgUrl: "/zaku.jpg"},
     { title: "Binary Sentiment Classification Model", description: "Evaluated product reviews to conduct sentiment analysis", skills: ["Python", "Scikit-Learn", "NLTK", "NumPy", "Pandas"], imgUrl: "/dm.png"},
     { title: "Modified Tetris", description: "Recreated tetris with new mechanics", skills: ["Java", "OOP"], imgUrl: "/tetris.jpg"},
