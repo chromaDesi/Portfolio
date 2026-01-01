@@ -1,10 +1,15 @@
 
 import { motion } from "framer-motion";
-import { FaPython, FaReact, FaNodeJs, FaGitAlt, FaLinux, FaJava, FaAws,FaDocker } from "react-icons/fa";
+import { 
+  FaPython, FaReact, FaNodeJs, 
+  FaGitAlt, FaLinux, FaJava, FaAws, FaDocker,
+  FaAndroid, FaWindows
+ } from "react-icons/fa";
 import {
   SiJavascript, SiC, SiHtml5, SiMysql, SiMongodb, SiNumpy,
   SiPandas, SiScikitlearn, SiJupyter, SiOracle, SiCanva,
-  SiAdobephotoshop, SiSqlalchemy, SiTailwindcss
+  SiAdobephotoshop, SiSqlalchemy, SiTailwindcss, SiGooglecloud, 
+  SiOpenai, SiFigma, SiKalilinux
 } from "react-icons/si";
 import { PiBlueprint } from "react-icons/pi";
 
@@ -32,6 +37,12 @@ const powers = [
   { name: "Photoshop", icon: SiAdobephotoshop },
   { name: "Agile Development", icon: PiBlueprint },
   { name: "Docker", icon: FaDocker },
+  { name: "Google Cloud", icon: SiGooglecloud },
+  { name: "OpenAI", icon: SiOpenai },
+  { name: "Figma", icon: SiFigma },
+  { name: "Kali Linux", icon: SiKalilinux },
+  { name: "Android SDK", icon: FaAndroid },
+  { name: "Windows", icon: FaWindows },
 ];
 
 const icons = (duration) => ({
