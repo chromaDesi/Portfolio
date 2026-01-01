@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import {motion} from 'framer-motion';
+import { image } from "framer-motion/client";
 
 //update projects
 const Projects = () => {
@@ -16,6 +17,15 @@ const Projects = () => {
   ];
 
   const research = [
+    { title: "Agentic Grant Automation Tool", description: "Developed and pilot an AI-driven Agentic Workflow to automate the discovery, evaluation, and application for public and private grants supporting community health initiatives.", skills: [
+        "Python",
+        "OpenAI",
+        "Ollama",
+        "Prompt Engineering",
+        "React JS",
+        "Agile Methodologies",
+        "Strategic Consulting",
+      ], url: "https://drive.google.com/drive/folders/12-J37l5TvCB9BRagx6hloZchmFaGGoh_?usp=sharing", imgUrl: "/poster.png"},
     { title: "Cost-Sensitive Learning: Propensity Modeling Optimization", description: "Evaluated and optimized various models to best model population propensity", skills: ["Python", "Scikit-learn", "NumPy", "Pandas"], imgUrl: "/prop_model_r.jpg", url: "https://www.linkedin.com/in/vparekhinfo/details/projects/343267436/multiple-media-viewer/?profileId=ACoAADLKqvEBxeGRTptNKOI22SgKFr17oUha0Fc&treasuryMediaId=1735510055966" },
     { title: "Marijuana and the Effects on the Young Adult", description: "Research Proposal on evaluating the effects of Marijuana on Young Adults", skills: ["Healthcare"], imgUrl: "/weed.jpg", url: "https://www.linkedin.com/in/vparekhinfo/details/projects/351239392/multiple-media-viewer/?profileId=ACoAADLKqvEBxeGRTptNKOI22SgKFr17oUha0Fc&treasuryMediaId=1748402929164" },
   ];

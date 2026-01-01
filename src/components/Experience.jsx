@@ -3,6 +3,23 @@ import { motion } from 'framer-motion';
 const experiences = [
     {
       id: 0,
+      img: "/gmuhonor.png",
+      role: "AI/ML Research Fellow",
+      company: "GBCS Group",
+      date: "August 2025 - December 2025",
+      desc: "Worked with Hope1Source stakeholders in order to develop an agentic solution to optimize the grant application process for nonprofit organizations using OpenAI. " +
+      "Created benchmarks and rubrics for the model based on market research for the model to follow guidelines when delivering relevant information to the user as part of the strategic team.",  
+      skills: [
+        "Python",
+        "OpenAI",
+        "Ollama",
+        "Prompt Engineering",
+        "React JS",
+        "Agile Methodologies",
+        "Strategic Consulting",
+      ],
+    },{
+      id: 0,
       img: "/algo.png",
       role: "AI/ML Research Fellow",
       company: "GBCS Group",
