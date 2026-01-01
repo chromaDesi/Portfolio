@@ -94,7 +94,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ y: -100, opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="text-foreground mt-4 text-lg font-semibold text-center mb-12 max-w-2xl mx-auto text-primary-foreground"
+                    className="mt-4 text-lg font-semibold text-center mb-12 max-w-2xl mx-auto text-primary-foreground"
                 >
                     Always looking forward to new opportunities and collaborations. Feel free to reach out.
                     I'm only one message away!!
