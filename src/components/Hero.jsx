@@ -1,40 +1,35 @@
 import { motion } from 'framer-motion';
 import { lazy, Suspense, useState, useEffect } from 'react';
 
-// Lazy load Spline
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
-const Hero = () => {
+const Hero = ({ onSplineReady }) => {
   const [isSplineLoaded, setIsSplineLoaded] = useState(false);
-  const [shouldLoadSpline, setShouldLoadSpline] = useState(false);
 
-  useEffect(() => {
-    // Delay loading Spline until after main content is visible
-    const timer = setTimeout(() => setShouldLoadSpline(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+  const handleSplineLoad = () => {
+    setIsSplineLoaded(true);
+    onSplineReady?.(); // notify App that Spline is ready
+  };
 
   return (
     <section
       id="Hero"
       className="relative h-screen w-full bg-black bg-gradient-to-b from-red-700 to-black overflow-hidden"
     >
-      {/* Spline background */}
-      {shouldLoadSpline && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isSplineLoaded ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 z-0"
-        >
-          <Suspense fallback={null}>
-            <Spline 
-              scene="/destiny.spline" 
-              onLoad={() => setIsSplineLoaded(true)}
-            />
-          </Suspense>
-        </motion.div>
-      )}
+      {/* Spline loads immediately — preloader is covering the screen */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isSplineLoaded ? 1 : 0 }}
+        transition={{ duration: 0.8 }}
+        className="absolute inset-0 z-0"
+      >
+        <Suspense fallback={null}>
+          <Spline
+            scene="/destiny.spline"
+            onLoad={handleSplineLoad}
+          />
+        </Suspense>
+      </motion.div>
 
       {/* Text content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">

@@ -3,38 +3,31 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Preloader from './components/Preloader';
 import { Toaster } from './components/ui/toaster';
 
-// Lazy load components
 const Home = lazy(() => import('./components/Home'));
 const NotFound = lazy(() => import('./components/NotFound'));
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [preloaderDone, setPreloaderDone] = useState(false);
+  const [splineReady, setSplineReady] = useState(false);
+  const showPreloader = !preloaderDone || !splineReady;
 
   useEffect(() => {
-    // Check if the window has finished loading
-    if (document.readyState === 'complete') {
-      setIsLoading(false);
-    } else {
-      window.addEventListener('load', () => setIsLoading(false));
-      return () => window.removeEventListener('load', () => setIsLoading(false));
-    }
+    const timer = setTimeout(() => setPreloaderDone(true), 2500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
       <Toaster />
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <BrowserRouter>
-          <Suspense fallback={<Preloader />}>
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      )}
+      {showPreloader && <Preloader />}
+      <BrowserRouter>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route index element={<Home onSplineReady={() => setSplineReady(true)} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </>
   );
 }
