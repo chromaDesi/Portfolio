@@ -4,8 +4,8 @@ const experiences = [
     {
       id: 0,
       img: "/gmuhonor.png",
-      role: "AI/ML Research Fellow",
-      company: "GBCS Group",
+      role: "AI Consultant",
+      company: "GMU Honors College",
       date: "August 2025 - December 2025",
       desc: "Worked with Hope1Source stakeholders in order to develop an agentic solution to optimize the grant application process for nonprofit organizations using OpenAI. " +
       "Created benchmarks and rubrics for the model based on market research for the model to follow guidelines when delivering relevant information to the user as part of the strategic team.",  
@@ -22,8 +22,8 @@ const experiences = [
       id: 0,
       img: "/algo.png",
       role: "AI/ML Research Fellow",
-      company: "GBCS Group",
-      date: "June 2025 - October 2025",
+      company: "Algoverse AI",
+      date: "June 2025 - August 2025",
       desc: "Prototyped generative AI solutions in PyTorch, translating research into deployable applications. Collaborated with mentors in weekly reviews to refine code, improve reproducibility, and ensure scalability.",   
       skills: [
         "Python",
