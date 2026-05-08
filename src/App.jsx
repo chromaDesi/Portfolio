@@ -9,17 +9,18 @@ const NotFound = lazy(() => import('./components/NotFound'));
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
   const [splineReady, setSplineReady] = useState(false);
-  const showPreloader = !preloaderDone || !splineReady;
+  const showPreloader = !(preloaderDone || splineReady);
 
   useEffect(() => {
-    const timer = setTimeout(() => setPreloaderDone(true), 2500);
+    // Fallback: ensure preloader never blocks the UI indefinitely.
+    const timer = setTimeout(() => setPreloaderDone(true), 6000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
       <Toaster />
-      {showPreloader && <Preloader />}
+      {showPreloader && <Preloader onFinish={() => setPreloaderDone(true)} />}
       <BrowserRouter>
         <Suspense fallback={null}>
           <Routes>
@@ -31,5 +32,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;

@@ -9,7 +9,7 @@ const Preloader = ({ onFinish }) => {
       setFadeOut(true); // start fade-out animation
 
       setTimeout(() => {
-        onFinish(); // tell App to render main site
+        onFinish?.(); // tell App to render main site
       }, 800); // match transition duration
     }, 3500); // preload duration
 

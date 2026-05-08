@@ -17,14 +17,14 @@ const LoadingSection = () => (
   </div>
 );
 
-const Home = () => {
+const Home = ({ onSplineReady } ) => {
     return (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
             <Navabar/>
 
             {/*content*/}
             <main>
-                <Hero/>
+                <Hero onSplineReady={onSplineReady} />
                 <Suspense fallback={<LoadingSection />}>
                     <Aboutme/>
                     <Skills/>
