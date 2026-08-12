@@ -22,4 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env 
+.env
+
+# Personal/dev artifacts not part of the site
+maxxed-site.zip
+transcript.pdf
+Steps to Complete.docx

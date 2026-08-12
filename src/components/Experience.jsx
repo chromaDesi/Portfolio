@@ -19,7 +19,7 @@ const experiences = [
         "Strategic Consulting",
       ],
     },{
-      id: 0,
+      id: 3,
       img: "/algo.png",
       role: "AI/ML Research Fellow",
       company: "Algoverse AI",
@@ -125,7 +125,7 @@ const Experience = () => {
 
             {/* Content Section */}
             <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-border bg-foreground backdrop-blur-md${
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-border bg-foreground backdrop-blur-md ${
                 index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
               } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
             >

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense, useState } from 'react';
 
 const Spline = lazy(() => import('@splinetool/react-spline'));
 

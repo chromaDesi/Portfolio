@@ -5,7 +5,6 @@
 hsl is a color, var defines variable
 --classname : hsl(var(--varname));*/
 html, body{
-    cursor: pointer;
     background-color: #0e0e0e; /* or your actual background */
   color: #ffffff;
   margin: 0;
@@ -25,7 +24,19 @@ html, body{
     --color-primary-foreground: hsl(var(--primary-foreground));
 
     --color-card: hsl(var(--card));
-    
+
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+
 
     /*Here we are defining some animations to be used in the website*/
     --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite; /*keep stars pulsating*/
@@ -67,6 +78,18 @@ In our case, we wont have a theme toggle*/
         --primary-foreground: 0 0% 100%;
 
         --card: 0 0% 0%;
+
+        --secondary: 0 0% 12%;
+        --secondary-foreground: 0 0% 100%;
+
+        --muted: 0 0% 20%;
+        --muted-foreground: 0 0% 65%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --input: 0 0% 80%;
+        --ring: 0 100% 50%;
     }
 }
     

@@ -1,5 +1,5 @@
 import { BriefcaseBusiness, User, Code } from 'lucide-react';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 
@@ -29,7 +29,13 @@ const Aboutme = () => {
     <section id="Aboutme" className="py-24 px-4 relative overflow-hidden bg-black">
       
 
-    <div className="relative z-10 container mx-auto max-w-5xl" ref={ref}>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="relative z-10 container mx-auto max-w-5xl"
+    >
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary-foreground">
           About <span className="text-primary">Me</span>
         </h2>
@@ -72,7 +78,7 @@ const Aboutme = () => {
             ))}
           </div>
         </div>
-    </div>
+    </motion.div>
     </section>
   );
 };

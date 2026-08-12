@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import {motion} from 'framer-motion';
-import { image } from "framer-motion/client";
 
 //update projects
 const Projects = () => {
@@ -12,7 +11,7 @@ const Projects = () => {
  "Implemented interactive MPAndroidChart dashboards and a budgeting module that provided clear category breakdowns, reducing navigation steps by ~25% and improving overall usability.", skills: ['Java', 'Android Studio', 'Firebase Firestore', 'MPAndroidChart', 'UI/UX Design', 'XML', 'Canva'], imgUrl:'/spendi.png', url:"https://github.com/chromaDesi/Spendi-Finance-Tracker"},
     {title: "GMU Marketplace Web Application – Team Project", description: "Contributing to a class-wide agile project to develop a full-stack campus marketplace web platform enabling secure item listings, search, and transactions among GMU students, alumni, and employees."+
 " Led the development of the Product Listings module, including designing MySQL schemas, writing Python-based backend logic for CRUD operations, and integrating with the front-end templates."+
-" Managed source control, issue tracking, and merge requests via GitLab, contributing to sprint-based feature delivery and peer code reviews.", skills: ['Python', 'Django', 'MySQL', 'HTML5', 'CSS', 'GitLab', "Agile"], imgUrl:'gmu.jpg', url:'https://github.com/chromaDesi/GMU-Marketplace-ProductListingsSubsystem'
+" Managed source control, issue tracking, and merge requests via GitLab, contributing to sprint-based feature delivery and peer code reviews.", skills: ['Python', 'Django', 'MySQL', 'HTML5', 'CSS', 'GitLab', "Agile"], imgUrl:'/gmu.jpg', url:'https://github.com/chromaDesi/GMU-Marketplace-ProductListingsSubsystem'
 },
     {title: "ISA GMU Official Website – Modern Club Platform ", description: "Designed and developed ISA GMU’s official website using React, TypeScript, and Framer Motion to boost student engagement and modernize the club’s digital presence.", skills: ['React.js', 'TailwindCSS', 'Vite', 'Framer Motion'], imgUrl:'isa.jpg', url:'https://isa-website-nine.vercel.app/'},
     { title: "FrequentFlier Rewards Android Application Tool ", description: "Created an Android app to allow easy access a custom database made in Oracle.", skills: ["Java", "OracleDB", "SQL", "Android", "JDBC API"], imgUrl: "/jdbc.jpg"},

@@ -4,7 +4,7 @@ import {
 import {cn} from "../libs/utils";
 import {useToast} from "../hooks/use-toast";
 import { useState, lazy, Suspense, useEffect } from "react";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import {motion} from 'framer-motion';
 
 // Lazy load Spline to reduce initial bundle size
@@ -39,7 +39,7 @@ const Contact = () => {
         setIsSubmitting(true)
 
         emailjs.sendForm(serviceId, templateId, e.target, publicKey)
-        .then((result) => {
+        .then(() => {
             setTimeout(() => {
                 toast({
                     title: 'Message sent',
