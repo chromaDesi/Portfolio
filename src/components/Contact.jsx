@@ -3,9 +3,10 @@ import {
 } from "lucide-react";
 import {cn} from "../libs/utils";
 import {useToast} from "../hooks/use-toast";
-import { useState, lazy, Suspense, useEffect } from "react";
+import { useState, lazy, Suspense, useEffect, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import {motion} from 'framer-motion';
+import { useWantsHeavyMotion } from "../hooks/use-media-query";
 
 // Lazy load Spline to reduce initial bundle size
 const Spline = lazy(() => import('@splinetool/react-spline'));
@@ -20,19 +21,32 @@ const Contact = () => {
         email: "",
         message: "",
     });
+    const sectionRef = useRef(null);
+    // Skip the heavy Spline/physics runtime on mobile, touch, and
+    // reduced-motion devices.
+    const wantsHeavyMotion = useWantsHeavyMotion();
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    // Delay Spline loading until component is in view or after initial render
+    // Only load Spline once this section is about to scroll into view.
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoadSpline(true);
-        }, 500); // Load Spline 500ms after component mounts
+        if (!wantsHeavyMotion || !sectionRef.current) return;
 
-        return () => clearTimeout(timer);
-    }, []);
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setLoadSpline(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: "200px" }
+        );
+        observer.observe(sectionRef.current);
+
+        return () => observer.disconnect();
+    }, [wantsHeavyMotion]);
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -60,7 +74,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="Contact" className="py-24 px-4 relative bg-secondary/30 overflow-hidden">
+        <section id="Contact" ref={sectionRef} className="py-24 px-4 relative bg-secondary/30 overflow-hidden">
             {/* Spline background with lazy loading */}
             {loadSpline && (
                 <motion.div

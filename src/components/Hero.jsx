@@ -1,15 +1,23 @@
 import { motion } from 'framer-motion';
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import { useWantsHeavyMotion } from '../hooks/use-media-query';
 
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const Hero = ({ onSplineReady }) => {
   const [isSplineLoaded, setIsSplineLoaded] = useState(false);
+  // Skip the ~1.3MB gzipped Spline/physics runtime on mobile, touch, and
+  // reduced-motion devices — they get the CSS gradient background instead.
+  const wantsHeavyMotion = useWantsHeavyMotion();
 
   const handleSplineLoad = () => {
     setIsSplineLoaded(true);
     onSplineReady?.(); // notify App that Spline is ready
   };
+
+  useEffect(() => {
+    if (!wantsHeavyMotion) onSplineReady?.();
+  }, [wantsHeavyMotion, onSplineReady]);
 
   return (
     <section
@@ -17,19 +25,21 @@ const Hero = ({ onSplineReady }) => {
       className="relative h-screen w-full bg-black bg-gradient-to-b from-red-700 to-black overflow-hidden"
     >
       {/* Spline loads immediately — preloader is covering the screen */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isSplineLoaded ? 1 : 0 }}
-        transition={{ duration: 0.8 }}
-        className="absolute inset-0 z-0"
-      >
-        <Suspense fallback={null}>
-          <Spline
-            scene="/destiny.spline"
-            onLoad={handleSplineLoad}
-          />
-        </Suspense>
-      </motion.div>
+      {wantsHeavyMotion && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isSplineLoaded ? 1 : 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 z-0"
+        >
+          <Suspense fallback={null}>
+            <Spline
+              scene="/destiny.spline"
+              onLoad={handleSplineLoad}
+            />
+          </Suspense>
+        </motion.div>
+      )}
 
       {/* Text content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">

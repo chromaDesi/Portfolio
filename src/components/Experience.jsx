@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const experiences = [
     {
       id: 0,
-      img: "/gmuhonor.png",
+      img: "/gmuhonor.webp",
       role: "AI Consultant",
       company: "GMU Honors College",
       date: "August 2025 - December 2025",
@@ -20,7 +20,7 @@ const experiences = [
       ],
     },{
       id: 3,
-      img: "/algo.png",
+      img: "/algo.webp",
       role: "AI/ML Research Fellow",
       company: "Algoverse AI",
       date: "June 2025 - August 2025",
@@ -37,7 +37,7 @@ const experiences = [
       ],
     },{
       id: 1,
-      img: "/gbcs.jpg",
+      img: "/gbcs.webp",
       role: "Express Backend Software Developer Intern",
       company: "GBCS Group",
       date: "June 2025 - August 2025",
@@ -57,7 +57,7 @@ const experiences = [
     },
     {
       id: 2,
-      img: "/opfin.jpg",
+      img: "/opfin.webp",
       role: "Data Analyst Intern",
       company: "Opfin AI",
       date: "December 2024 - June 2025",
@@ -119,6 +119,10 @@ const Experience = () => {
               <img
                 src={experience.img}
                 alt={experience.company}
+                loading="lazy"
+                decoding="async"
+                width="64"
+                height="64"
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
@@ -136,6 +140,10 @@ const Experience = () => {
                   <img
                     src={experience.img}
                     alt={experience.company}
+                    loading="lazy"
+                    decoding="async"
+                    width="64"
+                    height="64"
                     className="w-full h-full object-cover"
                   />
                 </div>

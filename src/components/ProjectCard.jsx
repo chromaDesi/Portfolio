@@ -4,6 +4,10 @@ const ProjectCard = ({ title, description, skills, imgUrl, url}) => {
       <img
         src={imgUrl}
         alt={title}
+        loading="lazy"
+        decoding="async"
+        width="400"
+        height="160"
         className="w-full h-40 object-cover rounded-md mb-4"
       />
       <h4 className="text-xl font-bold mb-2 text-primary">{title}</h4>
