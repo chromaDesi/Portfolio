@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const experiences = [
     {
       id: 4,
-      img: "/capitalone.svg",
+      img: "/capital-one-logo.svg",
       role: "Associate Software Engineer",
       company: "Capital One",
       date: "August 2026 - Present",
