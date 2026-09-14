@@ -2,6 +2,21 @@
 import { motion } from 'framer-motion';
 const experiences = [
     {
+      id: 4,
+      img: "/capitalone.svg",
+      role: "Associate Software Engineer",
+      company: "Capital One",
+      date: "August 2026 - Present",
+      desc: "Building and maintaining full-stack applications on Capital One's engineering teams, developing frontend interfaces with Angular and backend services in JavaScript/TypeScript. Working within CI/CD pipelines and AWS cloud infrastructure to ship reliable, scalable features, while collaborating cross-functionally in an agile environment.",
+      skills: [
+        "JavaScript",
+        "TypeScript",
+        "Angular",
+        "AWS",
+        "Jenkins",
+        "Claude",
+      ],
+    },{
       id: 0,
       img: "/gmuhonor.webp",
       role: "AI Consultant",
